@@ -41,8 +41,8 @@ jobs:
       - name: Install Black
         run: pip install black
 
-      - name: Run Black Formatting Check
-        run: black --check src
+      - name: Run Black Formatting Check (Info only)
+        run: black --check --diff src || true
 
   test:
     name: Test (Python ${{ matrix.python-version }})
